@@ -1,19 +1,19 @@
 Estado= ACRE; Bioma= Amazonia; médiadiaschuva=	0.23371191
 Estado= ALAGOAS; Bioma= Caatinga; médiadiaschuva=	0.14925373
-Estado= ALAGOAS; Bioma= Mata Atlantica; médiadiaschuva=	-0.0029987704
-Estado= AMAPA; Bioma= Amazonia; médiadiaschuva=	-0.012360004
+Estado= ALAGOAS; Bioma= Mata Atlantica; médiadiaschuva=	0.1615509
+Estado= AMAPA; Bioma= Amazonia; médiadiaschuva=	0.21175453
 Estado= AMAZONAS; Bioma= Amazonia; médiadiaschuva=	0.090402305
 Estado= BAHIA; Bioma= Caatinga; médiadiaschuva=	0.035045564
 Estado= BAHIA; Bioma= Cerrado; médiadiaschuva=	0.025922779
-Estado= BAHIA; Bioma= Mata Atlantica; médiadiaschuva=	-0.0125058275
-Estado= CEARA; Bioma= Caatinga; médiadiaschuva=	0.031685144
+Estado= BAHIA; Bioma= Mata Atlantica; médiadiaschuva=	0.053697597
+Estado= CEARA; Bioma= Caatinga; médiadiaschuva=	0.019131621
 Estado= DISTRITO FEDERAL; Bioma= Cerrado; médiadiaschuva=	0.018288638
-Estado= ESPIRITO SANTO; Bioma= Mata Atlantica; médiadiaschuva=	-0.008872937
+Estado= ESPIRITO SANTO; Bioma= Mata Atlantica; médiadiaschuva=	0.052115355
 Estado= GOIAS; Bioma= Cerrado; médiadiaschuva=	0.022426412
 Estado= GOIAS; Bioma= Mata Atlantica; médiadiaschuva=	0.028148148
-Estado= MARANHAO; Bioma= Amazonia; médiadiaschuva=	-0.0140374
-Estado= MARANHAO; Bioma= Caatinga; médiadiaschuva=	-0.033479877
-Estado= MARANHAO; Bioma= Cerrado; médiadiaschuva=	0.028511055
+Estado= MARANHAO; Bioma= Amazonia; médiadiaschuva=	0.07602371
+Estado= MARANHAO; Bioma= Caatinga; médiadiaschuva=	0.03259796
+Estado= MARANHAO; Bioma= Cerrado; médiadiaschuva=	0.022255363
 Estado= MATO GROSSO DO SUL; Bioma= Cerrado; médiadiaschuva=	0.056776673
 Estado= MATO GROSSO DO SUL; Bioma= Mata Atlantica; médiadiaschuva=	0.13346153
 Estado= MATO GROSSO DO SUL; Bioma= Pantanal; médiadiaschuva=	0.07582748
@@ -23,28 +23,28 @@ Estado= MATO GROSSO; Bioma= Pantanal; médiadiaschuva=	0.034845058
 Estado= MINAS GERAIS; Bioma= Caatinga; médiadiaschuva=	0.026332691
 Estado= MINAS GERAIS; Bioma= Cerrado; médiadiaschuva=	0.028510075
 Estado= MINAS GERAIS; Bioma= Mata Atlantica; médiadiaschuva=	0.044503175
-Estado= PARA; Bioma= Amazonia; médiadiaschuva=	0.060675293
+Estado= PARA; Bioma= Amazonia; médiadiaschuva=	0.044982407
 Estado= PARAIBA; Bioma= Caatinga; médiadiaschuva=	0.020993816
-Estado= PARAIBA; Bioma= Mata Atlantica; médiadiaschuva=	-0.0022076797
+Estado= PARAIBA; Bioma= Mata Atlantica; médiadiaschuva=	0.09210526
 Estado= PARANA; Bioma= Cerrado; médiadiaschuva=	0.16384181
 Estado= PARANA; Bioma= Mata Atlantica; médiadiaschuva=	0.12146706
 Estado= PERNAMBUCO; Bioma= Caatinga; médiadiaschuva=	0.018616859
-Estado= PERNAMBUCO; Bioma= Mata Atlantica; médiadiaschuva=	-0.024018552
-Estado= PIAUI; Bioma= Caatinga; médiadiaschuva=	0.0141141405
-Estado= PIAUI; Bioma= Cerrado; médiadiaschuva=	0.018998563
-Estado= RIO DE JANEIRO; Bioma= Mata Atlantica; médiadiaschuva=	-0.047035903
-Estado= RIO GRANDE DO NORTE; Bioma= Caatinga; médiadiaschuva=	-0.11972477
+Estado= PERNAMBUCO; Bioma= Mata Atlantica; médiadiaschuva=	0.049085986
+Estado= PIAUI; Bioma= Caatinga; médiadiaschuva=	0.0138793485
+Estado= PIAUI; Bioma= Cerrado; médiadiaschuva=	0.018594425
+Estado= RIO DE JANEIRO; Bioma= Mata Atlantica; médiadiaschuva=	0.06375554
+Estado= RIO GRANDE DO NORTE; Bioma= Caatinga; médiadiaschuva=	0.02661093
 Estado= RIO GRANDE DO NORTE; Bioma= Mata Atlantica; médiadiaschuva=	0.030710172
 Estado= RIO GRANDE DO SUL; Bioma= Mata Atlantica; médiadiaschuva=	0.15947536
-Estado= RIO GRANDE DO SUL; Bioma= Pampa; médiadiaschuva=	-0.035867017
+Estado= RIO GRANDE DO SUL; Bioma= Pampa; médiadiaschuva=	0.16502698
 Estado= RONDONIA; Bioma= Amazonia; médiadiaschuva=	0.09942793
 Estado= RONDONIA; Bioma= Cerrado; médiadiaschuva=	0.014836796
 Estado= RORAIMA; Bioma= Amazonia; médiadiaschuva=	0.14859742
-Estado= SANTA CATARINA; Bioma= Mata Atlantica; médiadiaschuva=	0.7481776
+Estado= SANTA CATARINA; Bioma= Mata Atlantica; médiadiaschuva=	0.14108092
 Estado= SANTA CATARINA; Bioma= Pampa; médiadiaschuva=	0.2
 Estado= SAO PAULO; Bioma= Cerrado; médiadiaschuva=	0.039095942
-Estado= SAO PAULO; Bioma= Mata Atlantica; médiadiaschuva=	0.08281143
+Estado= SAO PAULO; Bioma= Mata Atlantica; médiadiaschuva=	0.07519282
 Estado= SERGIPE; Bioma= Caatinga; médiadiaschuva=	0.1495327
-Estado= SERGIPE; Bioma= Mata Atlantica; médiadiaschuva=	-0.0061644865
+Estado= SERGIPE; Bioma= Mata Atlantica; médiadiaschuva=	0.11988304
 Estado= TOCANTINS; Bioma= Amazonia; médiadiaschuva=	0.027967758
 Estado= TOCANTINS; Bioma= Cerrado; médiadiaschuva=	0.019093828

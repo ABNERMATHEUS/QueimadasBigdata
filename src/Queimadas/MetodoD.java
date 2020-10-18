@@ -64,7 +64,10 @@ public class MetodoD {
             if(column[6].isEmpty()){
                 diassemchuva=Float.parseFloat("0");
 
-            }else{
+            }else if (Float.parseFloat(column[6])<0){
+                diassemchuva=Float.parseFloat("0");
+            }
+            else{
                 diassemchuva = Float.parseFloat(column[6]);
             }
 
