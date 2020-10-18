@@ -11,9 +11,25 @@ public class Auxiliar implements Writable {
 
     private Integer n;
 
-    private Integer variavel;
+    private Float variavel;
 
-    public Auxiliar(int n, int variavel) {
+    public Integer getN() {
+        return n;
+    }
+
+    public void setN(Integer n) {
+        this.n = n;
+    }
+
+    public Float getVariavel() {
+        return variavel;
+    }
+
+    public void setVariavel(Float variavel) {
+        this.variavel = variavel;
+    }
+
+    public Auxiliar(int n, float variavel) {
         this.n = n;
         this.variavel = variavel;
     }
@@ -30,25 +46,9 @@ public class Auxiliar implements Writable {
     @Override
     public void readFields(DataInput dataInput) throws IOException {
         this.n = Integer.parseInt(dataInput.readUTF());
-        this.variavel = Integer.parseInt(dataInput.readUTF());
+        this.variavel = Float.parseFloat(dataInput.readUTF());
     }
 
 
-
-    public Integer getN() {
-        return n;
-    }
-
-    public void setN(Integer n) {
-        this.n = n;
-    }
-
-    public Integer getVariavel() {
-        return variavel;
-    }
-
-    public void setVariavel(Integer variavel) {
-        this.variavel = variavel;
-    }
 
 }

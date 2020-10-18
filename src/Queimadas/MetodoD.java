@@ -34,7 +34,7 @@ public class MetodoD {
         j.setReducerClass(ReduceAAS.class); //REGISTRO DA CLASSE REDUCE
 
         j.setMapOutputKeyClass(Text.class);//SAIDA CHAVE MAP
-        j.setMapOutputValueClass(FloatWritable.class);// SAIDA VALOR MAP
+        j.setMapOutputValueClass(Auxiliar.class);// SAIDA VALOR MAP
 
 
         j.setCombinerClass(CombinerAAS.class);// Combiner
@@ -59,12 +59,20 @@ public class MetodoD {
             if(line.startsWith("datahora")) return;
 
             String[] column = line.split(",");
-            Integer diassemchuva = Integer.parseInt(column[6]);
+
+            Float diassemchuva;
+            if(column[6].isEmpty()){
+                diassemchuva=Float.parseFloat("0");
+
+            }else{
+                diassemchuva = Float.parseFloat(column[6]);
+            }
+
             String  estado = column[3];
             String bioma = column[5];
             if(!column[2].equals("Brasil")) return;
 
-            con.write(new Text(estado+" - "+bioma), new Auxiliar(1,diassemchuva));
+            con.write(new Text("Estado= "+estado+"; Bioma= "+bioma+"; médiadiaschuva="), new Auxiliar(1,diassemchuva));
         }
     }
 
@@ -73,7 +81,7 @@ public class MetodoD {
                 throws IOException, InterruptedException {
 
             int sum = 0;
-            int dia=0;
+            float dia=0;
 
             for(Auxiliar obj: values) {
                 sum += obj.getN();
@@ -93,7 +101,7 @@ public class MetodoD {
                 throws IOException, InterruptedException {
 
             int sum = 0;
-            int dia=0;
+            float dia=0;
 
             for(Auxiliar obj: values) {
                 sum += obj.getN();
