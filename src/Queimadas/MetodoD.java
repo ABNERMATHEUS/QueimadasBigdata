@@ -2,6 +2,7 @@ package Queimadas;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -22,52 +23,84 @@ public class MetodoD {
 
         Configuration c = new Configuration();
 
-        Path input = new Path("in/transactions.csv");
+        Path input = new Path("in/Focos_2020-01-01_2020-10-14.csv");
 
-        Path output = new Path("output/Question01.txt");
+        Path output = new Path("output/AAS.txt");
 
-        Job j = new Job(c, "Question01");
+        Job j = new Job(c, "AAS");
 
-        j.setJarByClass(MetodoD.class);
-        j.setMapperClass(MapTransactionsBrazil.class);
-        j.setReducerClass(ReduceTransactionsBrazil.class);
+        j.setJarByClass(MetodoD.class);//CLASSE PRINCIPAL
+        j.setMapperClass(MapAAS.class);//REGISTRAR DA CLASSE MAP
+        j.setReducerClass(ReduceAAS.class); //REGISTRO DA CLASSE REDUCE
 
-        j.setMapOutputKeyClass(Text.class);
-        j.setMapOutputValueClass(IntWritable.class);
+        j.setMapOutputKeyClass(Text.class);//SAIDA CHAVE MAP
+        j.setMapOutputValueClass(FloatWritable.class);// SAIDA VALOR MAP
+
+
+        j.setCombinerClass(CombinerAAS.class);// Combiner
+
+        j.setOutputKeyClass(Text.class); // SAIDA REDUCE CHAVE
+        j.setOutputValueClass(FloatWritable.class); // SAIDA REDUCE VALOR
 
         FileInputFormat.addInputPath(j, input);
         FileOutputFormat.setOutputPath(j, output);
+
 
         j.waitForCompletion(true);
 
     }
 
-    public static class MapTransactionsBrazil extends Mapper<LongWritable, Text, Text, IntWritable> {
+    public static class MapAAS extends Mapper<LongWritable, Text, Text, Auxiliar> {
         public void map(LongWritable key, Text value, Context con)
                 throws IOException, InterruptedException {
 
             String line = value.toString();
 
-            if(line.startsWith("country_or_area")) return;
+            if(line.startsWith("datahora")) return;
 
-            String[] column = line.split(";");
-            if(!column[0].equals("Brazil")) return;
+            String[] column = line.split(",");
+            Integer diassemchuva = Integer.parseInt(column[6]);
+            String  estado = column[3];
+            String bioma = column[5];
+            if(!column[2].equals("Brasil")) return;
 
-            con.write(new Text("Brazil"), new IntWritable(1));
+            con.write(new Text(estado+" - "+bioma), new Auxiliar(1,diassemchuva));
         }
     }
 
-    public static class ReduceTransactionsBrazil extends Reducer<Text, IntWritable, Text, IntWritable> {
-        public void reduce(Text word, Iterable<IntWritable> values, Context con)
+    public static class ReduceAAS extends Reducer<Text, Auxiliar, Text, FloatWritable> {
+        public void reduce(Text word, Iterable<Auxiliar> values, Context con)
                 throws IOException, InterruptedException {
 
             int sum = 0;
+            int dia=0;
 
-            for(IntWritable obj: values) {
-                sum += obj.get();
+            for(Auxiliar obj: values) {
+                sum += obj.getN();
+                dia+= obj.getVariavel();
             }
 
-            con.write(new Text("Brazil"), new IntWritable(sum));
+            float media= sum/dia;
+
+            con.write(word, new FloatWritable(media));
+
+        }
+    }
+
+
+    public static class CombinerAAS extends Reducer<Text, Auxiliar, Text, Auxiliar> {
+        public void reduce(Text word, Iterable<Auxiliar> values, Context con)
+                throws IOException, InterruptedException {
+
+            int sum = 0;
+            int dia=0;
+
+            for(Auxiliar obj: values) {
+                sum += obj.getN();
+                dia+= obj.getVariavel();
+            }
+
+            con.write(word, new Auxiliar(sum,dia));
 
         }
     }
